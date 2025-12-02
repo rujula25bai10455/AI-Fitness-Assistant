@@ -56,3 +56,45 @@ Follow these steps to run the project locally on your machine.
 ```bash
 git clone [https://github.com/rujula25bai10455/AI-Fitness-Assistant.git](https://github.com/rujula25bai10455/AI-Fitness-Assistant.git)
 cd AI-Fitness-Assistant
+### Step 2: Backend Setup ("The Brain)
+1. Navigate to backend folder:
+cd backend
+2. Create and active a virtual environment:
+python -m venv venv
+venv\Scripts\activate
+3. Install the required Python libraries:
+pip install fastapi uvicorn opencv-python mediapipe numpy scikit-learn textblob
+### Step 3: Frontend Setup ("The Dashboard")
+1. Open a new terminal and navigate to the frontend folder:
+cd frontend
+2. Install dependancies:
+npm install axios
+
+
+## How to run the project:
+you need to run three components simultaneously for the full experience.
+1. Start the backend API:
+In your backend Terminal (with venv active):
+unicorn main:app --reload
+2.Start the web dashboard:
+In your frontend terminal:
+npm run dev
+3. Launch the AI vision trainer:
+To start the camera and count reps , open a third terminal , navigate to backend , active venv , and run:
+python ai_trainer.py
+
+
+Feature Tested	Input	Expected Output	Status
+Rep Counting	Arm curled up < 30°	Counter increments by 1	✅ Pass
+Diet Planner	75kg, 175cm, "Gain"	High-protein meal plan generated	✅ Pass
+Habit Prediction	8 days gap, Tired	"High Risk" warning returned	✅ Pass
+Chatbot	"I feel lazy"	Motivational quote response	✅ Pass
+
+
+## Future Roadmap:
+1. []Iot Integration: Connect with smart bands to track heart rate.
+2. []Gym Recommendation: Use Google maps API to find nearby gyms .
+3. [] Database: Save user progress using MongoDB.
+4. [] User Auth: Add login/signup functionality .
+
+
